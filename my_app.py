@@ -16,7 +16,7 @@ def ValuePredictor(to_predict_list):
   to_predict = pd.DataFrame(a, columns=b)
   for col in b:
     to_predict[col] = to_predict[col].astype('float')
-  loaded_model = joblib.load("modelo_2.pkl")
+  loaded_model = joblib.load("modelo.pkl")
   result = loaded_model.predict_proba(to_predict)[:,1]
   return result[0]
 @app.route('/result', methods = ['POST'])
